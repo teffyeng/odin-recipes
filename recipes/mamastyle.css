@@ -1,0 +1,130 @@
+body {
+	background: rgb(211, 163, 126);
+	font-family: "Raleway", sans-serif;
+    color: whitesmoke;
+}
+header{
+    padding: 10px;
+    margin:0px;
+}
+.dish{
+    padding: 0 30px;
+    color:  rgb(211, 163, 126);
+    font: italic 20px "Playfair Display", serif;
+    text-transform: uppercase;
+    align-items: center;
+    align-content: center;
+}
+
+.h1{
+    display: flex;
+}
+.recipe{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+.recipe-ingredients {
+    display: inline-block;
+    min-height: 100vh;
+    border: 2px solid rgb(211, 163, 126);
+    box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px ;
+    text-align: left;
+    padding: 50px 30px;
+    margin:  30px 50px 50px 10px;
+    list-style: square;
+    color:rgb(211, 163, 126);
+    
+}
+li{
+    padding:5px;
+   
+  }
+
+  ul{
+    list-style: square;
+  }
+
+.main-content {
+	display: grid;
+	grid-template-areas:
+		"navigation recipe image"
+		"context context image";
+	grid-template-columns: min-content auto 50%;
+	grid-template-rows: auto min-content;
+	margin: auto;
+	min-height: 80vh;
+	max-height: calc(80 - 1.5em);
+	background: #fff;
+	box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+
+.context__wrapper {
+	grid-area: context;
+	background: #f7f7f7;
+	color: #333;
+	padding: 15px 20px;
+	font: 400 12px/1.2 "Raleway", sans-serif;
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto max-content;
+}
+
+.navigation {
+	grid-area: navigation;
+	writing-mode: vertical-rl;
+	text-orientation: mixed;
+	color:rgb(211, 163, 126);
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 20px;
+	font: 16px "Playfair Display", serif;
+	text-align: center;
+}
+
+.image{
+   overflow: hidden;
+   margin:0;
+}
+
+
+
+    @media screen and (max-width: 708px) {
+        .main-content {
+            margin: 0;
+            max-height: none;
+            grid-template-areas:
+            "header "
+            "recipe"
+            "context"
+            "image";
+            grid-template-columns: auto;
+            grid-template-rows: auto auto max-content;
+        }
+        .navigation {
+            display: none;
+        }
+        .image {
+            height: 300px;
+            width: 100%;
+        }
+        .recipe-ingredients{
+            padding-left: 25px;
+        
+                display: inline-block;
+                min-height: 70vh;
+                border: 2px solid rgb(211, 163, 126);
+                box-shadow: inset 0 0 0 2px #fff, inset 0 0 0 4px ;
+                text-align: left;
+                padding: 50px 20px;
+                margin:  30px 20px 30px 20px;
+                list-style: square;
+                color:rgb(211, 163, 126);
+    
+        }
+     
+    }
+    
